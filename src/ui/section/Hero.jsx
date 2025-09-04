@@ -131,7 +131,7 @@ const Hero = () => {
           <p className="uppercase tracking-widest text-sm">
             18 - 21 October, New York, USA
           </p>
-          <h1 className="text-5xl md:text-3xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-3xl font-bold leading-tight">
             Master Your Abroad Journey : <br /> Study Visa & Admission Secrets Revealed in 2025
           </h1>
           <p className="tracking-widest text-sm max-w-md">

@@ -1,3 +1,4 @@
+import Footer from "@/ui/components/Footer";
 import Navbar from "@/ui/components/Navbar";
 import AboutUs from "@/ui/section/AboutUs";
 import Blog from "@/ui/section/Blog";
@@ -23,6 +24,7 @@ export default function Home() {
       <Blog />
       <ContactSection />
       <MapFullScreen />
+      <Footer />
       <FixedFooterCTA />
       </main>
   );
