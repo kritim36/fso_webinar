@@ -3,8 +3,8 @@ import React from "react";
 
 export default function FixedFooterCTA() {
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-blue-50 to-white shadow-lg border-t border-gray-200 z-50">
-      <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-3 md:py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-blue-50 to-white shadow-lg border-t border-gray-200 z-40">
+      <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-1 md:py-2 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         
         {/* Extra Content (Desktop only) */}
         <div className="hidden md:flex flex-col text-gray-800">

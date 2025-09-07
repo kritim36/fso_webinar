@@ -3,20 +3,20 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const speakers = [
   {
-    name: "Diana Green",
+    name: "Bhavik Siddhpura",
     role: "Speaker",
-    image: "/images/speaker1.jpg",
+    image: "/bhavik.jpg",
   },
-  {
-    name: "Nathan Jones",
-    role: "Speaker",
-    image: "/images/speaker2.jpg",
-  },
-  {
-    name: "Natalie Carter",
-    role: "Speaker",
-    image: "/images/speaker3.jpg",
-  },
+  // {
+  //   name: "Nathan Jones",
+  //   role: "Speaker",
+  //   image: "/images/speaker2.jpg",
+  // },
+  // {
+  //   name: "Natalie Carter",
+  //   role: "Speaker",
+  //   image: "/images/speaker3.jpg",
+  // },
 ];
 
 export default function Speakers() {

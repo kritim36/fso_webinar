@@ -1,95 +1,29 @@
-// "use client";
-// import { useState, useEffect } from "react";
-// import { Menu, X } from "lucide-react";
-// import Link from "next/link";
-
-// export default function Navbar() {
-//   const [open, setOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   const navItems = [
-//     "Home",
-//     "About",
-//     "Speakers",
-//     // "How it Works",
-//     "Blogs",
-//     // "Feedback",
-//     "Contact",
-//   ];
-
-//   // Detect scroll to change background
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (window.scrollY > 50) {
-//         setScrolled(true);
-//       } else {
-//         setScrolled(false);
-//       }
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav
-//       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-//         scrolled ? "bg-[#3b0a77]/95 backdrop-blur-md shadow-lg text-white" : "bg-transparent text-[#3b0a77]/95"
-//       } `}
-//     >
-//       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
-//         {/* Logo */}
-//         <Link href="/" className="text-2xl font-bold tracking-wider">
-//           FSO
-//         </Link>
-
-//         {/* Desktop Menu */}
-//         <div className="hidden md:flex space-x-8">
-//           {navItems.map((item) => (
-//             <Link
-//               key={item}
-//               href={`#${item.toLowerCase().replace(/ /g, "")}`}
-//               className="hover:text-pink-400 transition"
-//             >
-//               {item}
-//             </Link>
-//           ))}
-//         </div>
-
-//         {/* Mobile Menu Button */}
-//         <button className="md:hidden" onClick={() => setOpen(!open)}>
-//           {open ? <X size={28} /> : <Menu size={28} />}
-//         </button>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       {open && (
-//         <div className="md:hidden bg-purple-900/95 backdrop-blur-md px-6 py-4 space-y-4">
-//           {navItems.map((item) => (
-//             <Link
-//               key={item}
-//               href={`#${item.toLowerCase().replace(/ /g, "")}`}
-//               onClick={() => setOpen(false)}
-//               className="block text-lg hover:text-pink-400 transition"
-//             >
-//               {item}
-//             </Link>
-//           ))}
-//         </div>
-//       )}
-//     </nav>
-//   );
-// }
-
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X, User } from "lucide-react"; // User icon for login/register
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { usePathname, useRouter } from "next/navigation";
+import { fetchCurrentUser, logout } from "@/store/authSlice";
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const pathname = usePathname();
+  const { user, tokens } = useSelector((state) => state.auth);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const navItems = ["Home", "About", "Speakers", "Blogs", "Contact"];
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Detect scroll to change background
   useEffect(() => {
@@ -104,13 +38,38 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // If tokens exist but user not loaded, fetch user info
+    if (tokens.access && !user) {
+      dispatch(fetchCurrentUser());
+    }
+  }, [tokens, user, dispatch]);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    router.push("/"); // redirect to homepage after logout
+  };
+
+  if (!mounted) {
+    // ✅ Avoid mismatch by rendering nothing until client mounts
+    return null;
+  }
+
+const isHome = pathname === "/";
+  const navbarBg = isHome
+    ? scrolled
+      ? "bg-[#3b0a77]/95 backdrop-blur-md shadow-lg"
+      : "bg-transparent"
+    : "bg-[#3b0a77]/95 backdrop-blur-md shadow-lg";
+
+
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#3b0a77]/95 backdrop-blur-md shadow-lg "
-          : "bg-transparent"
-      } text-white`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
+        // scrolled
+        //   ? "bg-[#3b0a77]/95 backdrop-blur-md shadow-lg "
+        //   : "bg-transparent"
+        ${navbarBg} text-white`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
         {/* Left Section: Logo + Menu */}
@@ -135,10 +94,71 @@ export default function Navbar() {
         </div>
 
         {/* Right Section: Login/Register icon */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link href="/login" className="hover:text-pink-400 transition">
+        <div className="hidden md:flex items-center space-x-6 relative">
+          {/* <Link href="/login" className="hover:text-pink-400 transition">
             <User size={22} />
-          </Link>
+          </Link> */}
+
+          {!tokens.access ? (
+            // ✅ Not logged in → show Login/Register
+            <>
+              <button
+                onClick={() => router.push("/login")}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+              >
+                Login
+              </button>
+              <button
+                onClick={() => router.push("/register")}
+                className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg"
+              >
+                Register
+              </button>
+            </>
+          ) : (
+            // ✅ Logged in → show user dropdown
+            <div className="relative">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200"
+              >
+                {user?.avatar ? (
+                  <img
+                    src={user.avatar}
+                    alt="User"
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                ) : (
+                  <User className="w-6 h-6 text-gray-700" />
+                )}
+              </button>
+
+              {menuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg p-4 text-gray-800">
+                  <div className="text-center font-semibold mb-2">
+                    {user?.username || "User"}
+                  </div>
+                  <hr className="mb-2" />
+
+                  <button
+                    onClick={() => {
+                      router.push("/profile");
+                      setMenuOpen(false);
+                    }}
+                    className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100"
+                  >
+                    My Profile
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 text-red-600"
+                  >
+                    Logout
+                  </button>
+                  </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -160,50 +180,47 @@ export default function Navbar() {
               {item}
             </Link>
           ))}
-          <Link
+          {/* <Link
             href="/login"
             onClick={() => setOpen(false)}
             className="block text-lg hover:text-pink-400 transition"
           >
             Login / Register
-          </Link>
+          </Link> */}
+
+          {!tokens.access ? (
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="block text-lg hover:text-pink-400 transition"
+            >
+              Login / Register
+            </Link>
+          ) : (
+            <div className="space-y-2">
+              <div className="text-center font-semibold">
+                {user?.username || "User"}
+              </div>
+              <button
+                onClick={() => {
+                  router.push("/profile");
+                  setOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md hover:bg-gray-700"
+              >
+                My Profile
+              </button>
+              <button
+                onClick={handleLogout}
+                className="block w-full text-left px-3 py-2 rounded-md hover:bg-gray-700 text-red-400"
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </div>
       )}
     </nav>
   );
 }
 
-
-
-// "use client";
-// import React from "react";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
-//       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-//         {/* Logo */}
-//         <div className="flex items-center space-x-2">
-//           <div className="text-2xl font-bold text-white">AGORA</div>
-//         </div>
-
-//         {/* Menu */}
-//         <ul className="hidden md:flex space-x-8 text-white">
-//           <li className="hover:text-blue-400 cursor-pointer">Home</li>
-//           <li className="hover:text-blue-400 cursor-pointer">Pages</li>
-//           <li className="hover:text-blue-400 cursor-pointer">Blog</li>
-//           <li className="hover:text-blue-400 cursor-pointer">Events</li>
-//           <li className="hover:text-blue-400 cursor-pointer">Shop</li>
-//         </ul>
-
-//         {/* Icons */}
-//         <div className="flex space-x-4 text-white">
-//           <button className="hover:text-blue-400">🔍</button>
-//           <button className="hover:text-blue-400">🛒</button>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
