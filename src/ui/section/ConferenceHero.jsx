@@ -79,7 +79,7 @@ export default function ConferenceHero() {
 
         {/* Button */}
         <button className="mt-8 px-8 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-md font-medium">
-          Tickets
+          Book Now
         </button>
       </div>
 

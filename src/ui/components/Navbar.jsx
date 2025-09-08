@@ -19,7 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const navItems = ["Home", "About", "Speakers", "Blogs", "Contact"];
+  const navItems = ["Home", "About", "Speakers", "Contact"];
 
   useEffect(() => {
     setMounted(true);
