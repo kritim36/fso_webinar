@@ -5,17 +5,9 @@ import { useRouter } from "next/navigation";
 
 const Hero = () => {
    const [showForm, setShowForm] = useState(false);
-  const router = useRouter();
 
   const handleBookNow = () => {
-    const accessToken = localStorage.getItem("accessToken");
-    const refreshToken = localStorage.getItem("refreshToken");
-
-    if (accessToken && refreshToken) {
       setShowForm(true); // Show popup form
-    } else {
-      router.push("/login"); // Redirect to login
-    }
   };
 
   return (

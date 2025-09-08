@@ -2,6 +2,7 @@
 import AboutUs from "@/ui/section/AboutUs";
 import ConferenceHero from "@/ui/section/ConferenceHero";
 import ContactSection from "@/ui/section/ContactSection";
+
 import Gallery from "@/ui/section/Gallery";
 import Hero from "@/ui/section/Hero";
 import JoinUs from "@/ui/section/JoinUs";
