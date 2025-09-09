@@ -6,7 +6,7 @@ import { GraduationCap, Users, Building2 } from "lucide-react"; // icons
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 bg-white">
+    <section id="why_us" className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 bg-white">
       {/* Left Side */}
       <div className="md:w-1/2 space-y-6">
         <p className="text-[#3b0a77] font-semibold uppercase tracking-wide">

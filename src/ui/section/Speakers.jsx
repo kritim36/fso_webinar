@@ -9,12 +9,12 @@ const speakers = [
     role: "Speaker",
     image: "/bhavik.jpg",
   },
-  // You can add more speakers here...
+  // add more speakers here...
 ];
 
 export default function Speakers() {
   return (
-    <section className="relative bg-gradient-to-b from-white to-blue-50 py-16 overflow-hidden">
+    <section id="speakers" className="relative bg-gradient-to-b from-white to-blue-50 py-16 overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 -z-10">
         {/* Gradient blobs */}

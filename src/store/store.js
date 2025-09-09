@@ -6,7 +6,7 @@ import paymentReducer from "./paymentSlice";
 const store = configureStore({
   reducer: {
     auth: authReducer,
-    webinars: webinarReducer,
+    webinar: webinarReducer,
     payment: paymentReducer,
   },
 });

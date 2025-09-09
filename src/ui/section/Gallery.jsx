@@ -25,6 +25,18 @@ const stories = [
   { id: 19, image: "22.jpeg", name: "Story 22" },
   { id: 20, image: "23.jpeg", name: "Story 23" },
   { id: 21, image: "24.jpeg", name: "Story 24" },
+  { id: 22, image: "8.jpeg", name: "Story 25" },
+  { id: 23, image: "10.jpeg", name: "Story 26" },
+  { id: 24, image: "16.jpeg", name: "Story 3" },
+  { id: 25, image: "25.jpeg", name: "Story 4" },
+  { id: 26, image: "26.jpeg", name: "Story 5" },
+  { id: 27, image: "27.jpeg", name: "Story 6" },
+  { id: 28, image: "28.jpeg", name: "Story 7" },
+  { id: 29, image: "29.jpeg", name: "Story 9" },
+  { id: 30, image: "30.jpeg", name: "Story 11" },
+  { id: 31, image: "31.jpeg", name: "Story 12" },
+  { id: 32, image: "32.jpeg", name: "Story 13" },
+
 ];
 
 const Gallery = () => {
@@ -52,7 +64,7 @@ const Gallery = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative p-4 mx-auto pt-8 pb-12 overflow-hidden">
+    <div id="gallery" className="relative p-4 mx-auto pt-8 pb-12 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#312d7c]/20 to-transparent rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tl from-[#e15228]/20 to-transparent rounded-full blur-3xl -z-10"></div>

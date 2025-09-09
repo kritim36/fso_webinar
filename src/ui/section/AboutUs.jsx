@@ -3,7 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 export default function AboutUs() {
   return (
-    <section className="relative bg-gray-50 py-20 overflow-hidden">
+    <section id="about" className="relative bg-gray-50 py-20 overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 -z-10">
         {/* Gradient blobs */}

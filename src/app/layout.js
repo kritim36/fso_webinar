@@ -1,8 +1,8 @@
 import Navbar from "@/ui/components/Navbar";
 import "./globals.css";
 import Footer from "@/ui/components/Footer";
-import FixedFooterCTA from "@/ui/section/FixedFooterCTA";
 import StoreProvider from "@/store/StoreProvider";
+import Script from "next/script";
 
 
 export const metadata = {
@@ -13,12 +13,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Load Razorpay Checkout script */}
+        <Script
+          src="https://checkout.razorpay.com/v1/checkout.js"
+          strategy="afterInteractive"
+        />
+      </head>
+
       <body>
         <StoreProvider>
           <Navbar />
             {children}
           <Footer />
-          <FixedFooterCTA />
         </StoreProvider>
       </body>
     </html>

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#3b0a77] text-gray-300 py-12 border-t border-gray-800 mb-28">
+    <footer className="bg-[#3b0a77] text-gray-300 py-12 border-t border-gray-800">
       <div className="container mx-auto flex flex-col items-center space-y-8">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -16,10 +16,10 @@ const Footer = () => {
         {/* Nav Links */}
         <nav>
           <ul className="flex space-x-8 text-sm font-medium">
-            <li><a href="#" className="hover:text-white transition">Home</a></li>
-            <li><a href="#" className="hover:text-white transition">Blog</a></li>
-            <li><a href="#" className="hover:text-white transition">Shop</a></li>
-            <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
+            <li><a href="/#home" className="hover:text-white transition">Home</a></li>
+            <li><a href="/#about" className="hover:text-white transition">About</a></li>
+            <li><a href="/#why_us" className="hover:text-white transition">Why Us</a></li>
+            <li><a href="/#gallery" className="hover:text-white transition">Gallery</a></li>
           </ul>
         </nav>
 
