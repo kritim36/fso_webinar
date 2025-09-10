@@ -13,6 +13,7 @@ import Speakers from "@/ui/section/Speakers";
 import Testimonials from "@/ui/section/Testimonials";
 import WhoShouldJoin from "@/ui/section/WhoShouldJoin";
 import WhyChooseUs from "@/ui/section/WhyChooseUs";
+import AchievementCarousel from "@/ui/section/AchievementCarousel";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -42,6 +43,7 @@ export default function Home() {
       
       <Testimonials />
       <Gallery />
+      <AchievementCarousel />
       {/* <PricingSection />
       <Blog /> */}
       {/* <ContactSection /> */}

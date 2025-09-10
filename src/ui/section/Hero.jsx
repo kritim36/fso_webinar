@@ -267,7 +267,7 @@ const Hero = () => {
           <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105">
             <div className="text-center space-y-2">
               <div className="text-4xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                500+
+                4500+
               </div>
               <div className="text-sm text-gray-300 font-semibold tracking-wide">
                 Success Stories
