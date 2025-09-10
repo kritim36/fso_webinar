@@ -485,9 +485,7 @@ const Gallery = () => {
           </div>
           <div className="w-px h-8 bg-gray-300"></div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-[#e15228]">
-              {stories.filter((s) => s.category === "Achievement").length}+
-            </div>
+            <div className="text-2xl font-bold text-[#e15228]">100+</div>
             <div className="text-sm text-gray-600">Success Stories</div>
           </div>
         </div>

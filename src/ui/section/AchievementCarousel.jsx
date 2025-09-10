@@ -5,48 +5,44 @@ import Image from "next/image";
 const achievements = [
   {
     src: "/achievements/achiv-1.jpg",
-    title: "Best Innovation Award",
-    subtitle: "Recognized for outstanding creativity in 2023",
+    title: "Train The Trainer",
+    subtitle: "By Andrew Thomas, IELTS Expert",
   },
   {
     src: "/achievements/achiv-3.jpg",
-    title: "Top Performer",
-    subtitle: "Ranked #1 among 200+ participants",
+    title: "The Biggest Brand 'YOURSELF'",
+    subtitle: "Ahmedabad Education Group",
   },
   {
     src: "/achievements/achiv-5.jpg",
-    title: "Community Service",
-    subtitle: "Awarded for social impact contributions",
+    title: "IELTS Achievement Award",
+    subtitle: "IELTS BRITISH COUNCIL",
   },
   {
     src: "/achievements/achiv-6.jpg",
-    title: "Excellence in Design",
-    subtitle: "Recognized for UI/UX excellence",
-  },
-  {
-    src: "/achievements/achiv-7.jpg",
-    title: "Best Innovation Award",
-    subtitle: "Recognized for outstanding creativity in 2023",
+    title: "Silver Member Award",
+    subtitle: "British Council IELTS Partnership Programme",
   },
   {
     src: "/achievements/achiv-8.jpg",
-    title: "Top Performer",
-    subtitle: "Ranked #1 among 200+ participants",
+    title: "Registered Member of Ahmedabad Education Group",
+    subtitle: "2018-2028(Lifetime Membership)",
   },
   {
     src: "/achievements/achiv-9.jpg",
-    title: "Community Service",
-    subtitle: "Awarded for social impact contributions",
+    title: "Certificate of Appreciation",
+    subtitle: "For being Part of the Outgoing Leadership Team",
   },
   {
     src: "/achievements/achiv-10.jpg",
-    title: "Excellence in Design",
-    subtitle: "Recognized for UI/UX excellence",
+    title: "Certificate of Appreciation",
+    subtitle:
+      "Invaluable Contribution towards the success of the 1st edition of BNI PETRONIUS",
   },
   {
     src: "/achievements/achiv-11.jpg",
-    title: "Excellence in Design",
-    subtitle: "Recognized for UI/UX excellence",
+    title: "Sanjhi Exhibitions",
+    subtitle: "International Education Fair 2019",
   },
 ];
 

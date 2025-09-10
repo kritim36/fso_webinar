@@ -253,7 +253,7 @@ const Hero = () => {
             {/* Floating Stats */}
             <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">4500+</div>
+                <div className="text-2xl font-bold text-white">100+</div>
                 <div className="text-xs text-gray-300">Success Stories</div>
               </div>
             </div>

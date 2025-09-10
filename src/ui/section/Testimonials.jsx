@@ -335,7 +335,7 @@ const Testimonials = () => {
         }`}
       >
         <div className="text-center">
-          <div className="text-2xl font-bold">45,000+</div>
+          <div className="text-2xl font-bold">100+</div>
           <div className="text-sm opacity-90">Success Stories</div>
         </div>
       </div>
