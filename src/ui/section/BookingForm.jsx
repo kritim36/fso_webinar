@@ -49,7 +49,9 @@ export default function BookingForm({ formData, setFormData, onClose }) {
           />
 
           <div className="p-4 rounded-md bg-[#1a1a2e]">
-            <p className="mb-2">💳 Payment will open after confirming booking</p>
+            <p className="mb-2">
+              💳 Payment will open after confirming booking
+            </p>
           </div>
 
           <div className="flex justify-end space-x-3">
