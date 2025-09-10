@@ -49,6 +49,19 @@ const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [bubbles, setBubbles] = useState([]);
+
+useEffect(() => {
+  // Only run on client
+  const generated = [...Array(8)].map(() => ({
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    animationDelay: `${Math.random() * 3}s`,
+    animationDuration: `${4 + Math.random() * 2}s`,
+  }));
+  setBubbles(generated);
+}, []);
+
 
   useEffect(() => {
     setIsLoaded(true);
@@ -147,7 +160,7 @@ const Testimonials = () => {
 
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(8)].map((_, i) => (
+        {/* {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute w-64 h-64 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl animate-pulse"
@@ -158,7 +171,14 @@ const Testimonials = () => {
               animationDuration: `${4 + Math.random() * 2}s`,
             }}
           />
-        ))}
+        ))} */}
+        {bubbles.map((style, i) => (
+    <div
+      key={i}
+      className="absolute w-64 h-64 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl animate-pulse"
+      style={style}
+    />
+  ))}
       </div>
 
       {/* Navigation Arrows */}

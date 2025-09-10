@@ -13,6 +13,18 @@ import {
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentYear] = useState(new Date().getFullYear());
+  const [particles, setParticles] = useState([]);
+
+  useEffect(() => {
+    // Only generate random positions on client
+    const generated = [...Array(12)].map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animationDuration: `${3 + Math.random() * 2}s`,
+    }));
+    setParticles(generated);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -92,7 +104,7 @@ const Footer = () => {
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-blue-600/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
 
         {/* Floating particles */}
-        {[...Array(12)].map((_, i) => (
+        {/* {[...Array(12)].map((_, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 bg-white/10 rounded-full animate-pulse"
@@ -102,6 +114,14 @@ const Footer = () => {
               animationDelay: `${Math.random() * 3}s`,
               animationDuration: `${3 + Math.random() * 2}s`,
             }}
+          />
+        ))} */}
+
+         {particles.map((style, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-white/10 rounded-full animate-pulse"
+            style={style}
           />
         ))}
       </div>
