@@ -107,7 +107,7 @@ export default function AchievementCarousel() {
         >
           {/* Far Left */}
           <div
-            className="group w-20 h-20 md:w-24 md:h-24 relative opacity-30 scale-75 transition-all duration-700 cursor-pointer hover:opacity-60 hover:scale-85"
+            className="hidden lg:block group w-20 h-20 md:w-24 md:h-24 relative opacity-30 scale-75 transition-all duration-700 cursor-pointer hover:opacity-60 hover:scale-85"
             onClick={() => handleImageClick(-2)}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -121,7 +121,7 @@ export default function AchievementCarousel() {
 
           {/* Left */}
           <div
-            className="group w-32 h-32 md:w-40 md:h-40 relative opacity-60 scale-85 transition-all duration-700 cursor-pointer hover:opacity-80 hover:scale-95"
+            className="group w-20 h-20 lg:w-32 lg:h-32 md:w-40 md:h-40 relative opacity-60 scale-85 transition-all duration-700 cursor-pointer hover:opacity-80 hover:scale-95"
             onClick={() => handleImageClick(-1)}
           >
             <div className="absolute -inset-1 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -156,7 +156,7 @@ export default function AchievementCarousel() {
 
           {/* Right */}
           <div
-            className="group w-32 h-32 md:w-40 md:h-40 relative opacity-60 scale-85 transition-all duration-700 cursor-pointer hover:opacity-80 hover:scale-95"
+            className="group w-20 h-20 lg:w-32 lg:h-32 md:w-40 md:h-40 relative opacity-60 scale-85 transition-all duration-700 cursor-pointer hover:opacity-80 hover:scale-95"
             onClick={() => handleImageClick(1)}
           >
             <div className="absolute -inset-1 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -170,7 +170,7 @@ export default function AchievementCarousel() {
 
           {/* Far Right */}
           <div
-            className="group w-20 h-20 md:w-24 md:h-24 relative opacity-30 scale-75 transition-all duration-700 cursor-pointer hover:opacity-60 hover:scale-85"
+            className="hidden lg:block group w-20 h-20 md:w-24 md:h-24 relative opacity-30 scale-75 transition-all duration-700 cursor-pointer hover:opacity-60 hover:scale-85"
             onClick={() => handleImageClick(2)}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>

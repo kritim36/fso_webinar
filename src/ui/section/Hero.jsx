@@ -9,8 +9,11 @@ import {
   resetRegistration,
 } from "@/store/webinarSlice";
 import BookingForm from "./BookingForm";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Hero = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { webinars, registration, paymentVerified } = useSelector(
     (state) => state.webinar
@@ -214,9 +217,9 @@ const Hero = () => {
               >
                 Book Your Seat Now
               </button>
-              <button className="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-200">
+              <Link href="/#about" className="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-200">
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Feature Points */}

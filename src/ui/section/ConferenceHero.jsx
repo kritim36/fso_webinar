@@ -102,6 +102,18 @@ export default function ConferenceHero() {
     return () => clearInterval(timer);
   }, [webinars]);
 
+  const [particles, setParticles] = useState([]);
+
+useEffect(() => {
+  const newParticles = [...Array(20)].map(() => ({
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    animationDelay: `${Math.random() * 3}s`,
+    animationDuration: `${3 + Math.random() * 2}s`,
+  }));
+  setParticles(newParticles);
+}, []);
+
   const CountdownCard = ({ value, label, delay = 0 }) => (
     <div
       className={`relative group transform transition-all duration-700 delay-${delay} ${
@@ -139,7 +151,7 @@ export default function ConferenceHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
       {/* Floating particles effect */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -152,7 +164,17 @@ export default function ConferenceHero() {
             }}
           />
         ))}
-      </div>
+      </div> */}
+      <div className="absolute inset-0">
+  {particles.map((style, i) => (
+    <div
+      key={i}
+      className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
+      style={style}
+    />
+  ))}
+</div>
+
 
       {/* Main content */}
       <div className="relative text-center text-white z-10 px-4 max-w-6xl mx-auto">
