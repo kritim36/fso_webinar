@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchWebinars } from "@/store/webinarSlice";
+import Swal from "sweetalert2";
+import { fetchWebinars, verifyPayment, resetRegistration } from "@/store/webinarSlice";
 import BookingForm from "./BookingForm";
 
 export default function ConferenceHero() {
   const dispatch = useDispatch();
-  const { webinars } = useSelector((state) => state.webinar);
+  const { webinars, registration, paymentVerified  } = useSelector((state) => state.webinar);
   const [timeLeft, setTimeLeft] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,7 +16,6 @@ export default function ConferenceHero() {
     name: "",
     email: "",
     phone: "",
-    country: "",
   });
 
   // Fetch webinars on load
@@ -31,6 +31,53 @@ export default function ConferenceHero() {
       setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
     }
   }, [webinars]);
+
+    useEffect(() => {
+      if (registration?.razorpay_order_id) {
+        const options = {
+          key: registration.key,
+          amount: registration.amount * 100,
+          currency: registration.currency,
+          name: "Webinar Registration",
+          description: "Payment for Webinar",
+          order_id: registration.razorpay_order_id,
+          handler: function (response) {
+            dispatch(
+              verifyPayment({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                registration_id: registration.registration_id,
+              })
+            );
+          },
+          prefill: {
+            name: formData.name,
+            email: formData.email,
+            contact: formData.phone,
+          },
+          theme: { color: "#3399cc" },
+        };
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+      }
+    }, [registration, dispatch, formData]);
+  
+    // SweetAlert after successful payment
+    useEffect(() => {
+      if (paymentVerified) {
+        Swal.fire({
+          title: "🎉 Payment Successful!",
+          text: "Please check your email for webinar confirmation.",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        }).then(() => {
+          setShowForm(false);
+          dispatch(resetRegistration());
+        });
+      }
+    }, [paymentVerified, dispatch]);
 
   // Countdown timer
   useEffect(() => {

@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -223,14 +223,14 @@ const Testimonials = () => {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-2">
                 <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 <h4 className="uppercase text-sm tracking-widest text-gray-600 font-semibold">
                   Success Stories
                 </h4>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent leading-tight">
                 What Our Clients Say
               </h2>
             </div>
@@ -245,11 +245,11 @@ const Testimonials = () => {
             >
               <StarRating rating={testimonials[current].rating} />
 
-              <div className="relative mb-8">
+              <div className="relative mb-4">
                 {/* Quote decoration */}
                 <div className="absolute -left-4 -top-2">
                   <svg
-                    className="w-16 h-16 text-blue-500/20"
+                    className="w-12 h-12 text-blue-500/20"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -257,7 +257,7 @@ const Testimonials = () => {
                   </svg>
                 </div>
 
-                <blockquote className="text-gray-700 text-lg md:text-xl leading-relaxed font-medium relative z-10 pl-8">
+                <blockquote className="text-gray-700 text-lg md:text-xl leading-relaxed font-medium relative z-10 pl-4">
                   {testimonials[current].message}
                 </blockquote>
               </div>
@@ -271,7 +271,7 @@ const Testimonials = () => {
                   : "translate-y-0 opacity-100"
               }`}
             >
-              <div className="flex items-center gap-6 mb-8">
+              <div className="flex items-center gap-6 mb-4">
                 <Avatar
                   initials={testimonials[current].avatar}
                   name={testimonials[current].name}
