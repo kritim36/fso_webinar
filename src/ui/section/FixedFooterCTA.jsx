@@ -91,8 +91,8 @@ export default function FixedFooterCTA() {
           <div className="flex flex-row items-center justify-between w-full gap-3">
             {/* Price Section */}
             <div className="text-left">
-              <p className="text-lg font-bold text-blue-600">₹99/-</p>
-              <p className="text-sm text-gray-500 line-through">₹9999</p>
+              <p className="text-lg font-bold text-blue-600">₹199/-</p>
+              <p className="text-sm text-gray-500 line-through">₹299</p>
             </div>
 
             {/* CTA Button */}

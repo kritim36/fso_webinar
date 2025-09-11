@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why_us"
-      className="relative min-h-screen py-24 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 overflow-hidden"
     >
       {/* Premium Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-indigo-50/30"></div>
@@ -64,24 +64,24 @@ const WhyChooseUs = () => {
         <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200/40 to-transparent"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-16">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Enhanced Content */}
           <div className="relative space-y-8">
             {/* Background card effect */}
-            <div className="absolute -inset-8 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-3xl border border-white/40 shadow-xl"></div>
+            <div className="absolute -inset-4 sm:-inset-6 md:-inset-8 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-sm rounded-3xl border border-white/40 shadow-xl"></div>
 
-            <div className="relative z-10 p-8">
+            <div className="relative z-10 p-4 sm:p-6 md:p-8">
               {/* Header badge */}
-              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 backdrop-blur-sm border border-purple-200/30 rounded-full px-6 py-3 mb-8">
-                <Star className="w-5 h-5 text-purple-600" />
-                <span className="text-sm font-bold text-purple-700 tracking-wide uppercase">
+              <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 backdrop-blur-sm border border-purple-200/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                <span className="text-xs sm:text-sm font-bold text-purple-700 tracking-wide uppercase">
                   Why The Visa Man for South Korea?
                 </span>
               </div>
 
               {/* Main heading */}
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 sm:mb-8">
                 <span className="bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-700 bg-clip-text text-transparent">
                   Reliable advice for
                 </span>
@@ -92,7 +92,7 @@ const WhyChooseUs = () => {
               </h2>
 
               {/* Description */}
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
                 <p>
                   Make your dream of studying in South Korea a reality with{" "}
                   <span className="font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -108,7 +108,7 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200/50">
+              <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 py-6 sm:pt-8 border-t border-gray-200/50">
                 {[
                   { number: "24k+", label: "Students Guided" },
                   { number: "15+", label: "Years Experience" },
@@ -148,36 +148,36 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Card content */}
-                <div className="relative z-10 flex items-start p-8">
+                <div className="relative z-10 flex items-start p-6 sm:p-8">
                   {/* Enhanced icon */}
-                  <div className="relative">
+                  <div className="relative flex-shrink-0">
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500`}
+                      className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500`}
                     >
-                      <feature.icon className="w-8 h-8 text-white" />
+                      <feature.icon className="w-6 h-6 sm:w-8 sm-h-8 text-white" />
                     </div>
                     {/* Glow effect */}
                     <div
-                      className={`absolute inset-0 w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-500`}
+                      className={`absolute inset-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-500`}
                     ></div>
                   </div>
 
                   {/* Content */}
-                  <div className="ml-6 flex-1">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
+                  <div className="ml-4 sm:ml-6 flex-1">
+                    <div className="flex items-center space-x-2 mb-2 sm:mb-3">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
                         {feature.title}
                       </h3>
                       <CheckCircle
-                        className={`w-5 h-5 text-${feature.accent}-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                        className={`w-4 h-4 sm:w-5 sm:h-5 text-${feature.accent}-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                       />
                     </div>
-                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                       {feature.description}
                     </p>
 
                     {/* Progress indicator */}
-                    <div className="mt-4 w-full h-1 bg-gray-200/50 rounded-full overflow-hidden">
+                    <div className="mt-3 sm:mt-4  w-full h-1 bg-gray-200/50 rounded-full overflow-hidden">
                       <div
                         className={`h-full bg-gradient-to-r ${feature.color} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out`}
                       ></div>
@@ -188,22 +188,22 @@ const WhyChooseUs = () => {
             ))}
 
             {/* Trust indicators */}
-            <div className="mt-12 p-6 bg-gradient-to-r from-gray-50/80 to-white/60 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg">
-              <div className="flex items-center justify-center space-x-8">
+            <div className="mt-8 sm:mt-12 p-4 sm:p-6 bg-gradient-to-r from-gray-50/80 to-white/60 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
                 <div className="flex items-center space-x-2">
                   <Award className="w-5 h-5 text-yellow-500" />
                   <span className="text-sm font-semibold text-gray-700">
                     Award Winning
                   </span>
                 </div>
-                <div className="w-px h-6 bg-gray-300"></div>
+                <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span className="text-sm font-semibold text-gray-700">
                     Trusted Globally
                   </span>
                 </div>
-                <div className="w-px h-6 bg-gray-300"></div>
+                <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
                 <div className="flex items-center space-x-2">
                   <Star className="w-5 h-5 text-purple-500" />
                   <span className="text-sm font-semibold text-gray-700">
