@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import {
   FaFacebookF,
@@ -140,21 +141,21 @@ const Footer = () => {
             {/* Logo Section */}
             <div className="flex items-center justify-center space-x-3 mb-8">
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-white to-purple-200 rounded-2xl flex items-center justify-center shadow-2xl ring-4 ring-white/20">
-                  <span className="text-2xl font-bold bg-gradient-to-br from-[#3b0a77] to-purple-800 bg-clip-text text-transparent">
-                    FSO
-                  </span>
-                </div>
-                {/* Glow effect */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">
-                  First Step Overseas
-                </h3>
-                <p className="text-purple-200 text-sm">
-                  Your Gateway to Global Education
-                </p>
+                <div
+                                    className={`w-[88px] h-[72px] sm:w-[100px] sm:h-[68] lg:w-[120px] lg:h-[80px] rounded-2xl flex items-center justify-center transition-all duration-300 
+                                         bg-white/40 backdrop-blur-md border border-white/50
+                                        group-hover:scale-110`}
+                                  >
+                                    <div className="relative h-[40px] w-[250px] m-2 lg:m-2 sm:m-1 sm:h-[68px] sm:w-[200px]">
+                                      <Image
+                                        src="/FSO_Logo.png"
+                                        alt="FSO Logo"
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                      />
+                                    </div>
+                                  </div>
               </div>
             </div>
 

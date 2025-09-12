@@ -11,6 +11,7 @@ import {
   verifyPayment,
   resetRegistration,
 } from "@/store/webinarSlice";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -97,6 +98,7 @@ export default function Navbar() {
     { name: "Speakers", href: "/#speakers", id: "speakers" },
     { name: "Why Us", href: "/#why_us", id: "why_us" },
     { name: "Gallery", href: "/#gallery", id: "gallery" },
+    { name: "FAQ", href: "/#faq", id: "faq" },
   ];
 
   useEffect(() => {
@@ -159,7 +161,7 @@ export default function Navbar() {
           <div className="flex items-center justify-center gap-2">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span>
-              🎯 Join our exclusive South Korea webinar - Limited seats
+              🎯 Join our exclusive South Korea workshop @ INR 199 - Limited seats
               available!
             </span>
             <button
@@ -172,7 +174,7 @@ export default function Navbar() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-2">
             {/* Logo Section */}
             <div
               className={`flex items-center space-x-3 transform transition-all duration-700 delay-200 ${
@@ -183,37 +185,27 @@ export default function Navbar() {
             >
               <Link href="/" className="group flex items-center space-x-3">
                 {/* Enhanced Logo */}
-                <div className="relative">
+                <div className="relativer">
                   <div
-                    className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${
+                    className={`w-[88px] h-[72px] sm:w-[100px] sm:h-[68] lg:w-[120px] lg:h-[80px] rounded-2xl flex items-center justify-center transition-all duration-300 ${
                       isHome && !scrolled
-                        ? "bg-white/20 backdrop-blur-md border border-white/30"
-                        : "bg-gradient-to-br from-[#3b0a77] to-purple-600 shadow-lg"
+                        ? "bg-white/30 backdrop-blur-md border border-white/40"
+                        : ""
+                        // : "bg-gradient-to-br from-[#3b0a77] to-purple-600 shadow-lg"
                     } group-hover:scale-110`}
                   >
-                    <span
-                      className={`text-xl font-bold ${
-                        isHome && !scrolled ? "text-white" : "text-white"
-                      }`}
-                    >
-                      FSO
-                    </span>
+                    <div className="relative h-[40px] w-[250px] m-2 lg:m-2 sm:m-1 sm:h-[68px] sm:w-[200px]">
+                      <Image
+                        src="/FSO_Logo.png"
+                        alt="FSO Logo"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
                   </div>
                   {/* Glow effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                </div>
-
-                <div className="hidden lg:block">
-                  <h1 className={`text-xl font-bold ${logoColor}`}>
-                    First Step Overseas
-                  </h1>
-                  <p
-                    className={`text-xs ${
-                      isHome && !scrolled ? "text-purple-200" : "text-gray-500"
-                    }`}
-                  >
-                    Your Gateway to Global Education
-                  </p>
                 </div>
               </Link>
             </div>

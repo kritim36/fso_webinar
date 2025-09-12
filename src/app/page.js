@@ -14,6 +14,8 @@ import Testimonials from "@/ui/section/Testimonials";
 import WhoShouldJoin from "@/ui/section/WhoShouldJoin";
 import WhyChooseUs from "@/ui/section/WhyChooseUs";
 import AchievementCarousel from "@/ui/section/AchievementCarousel";
+import CTA from "@/ui/section/CTA";
+import FAQ from "@/ui/section/FAQ";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,6 +37,7 @@ export default function Home() {
       
       <Hero />
       <JoinUs />
+      <CTA />
       <AboutUs />
       <Speakers />
       <WhyChooseUs />
@@ -44,6 +47,7 @@ export default function Home() {
       <Testimonials />
       <Gallery />
       <AchievementCarousel />
+      <FAQ />
       {/* <PricingSection />
       <Blog /> */}
       {/* <ContactSection /> */}

@@ -6,7 +6,7 @@ import Script from "next/script";
 
 
 export const metadata = {
-  title: "Fso_Webinar",
+  title: "Webinar | First Step Overseas",
   description: "Webinar",
 };
 

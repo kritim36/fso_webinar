@@ -11,6 +11,7 @@ import {
 import BookingForm from "./BookingForm";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { CalendarDays, Clock } from "lucide-react";
 
 const Hero = () => {
   const router = useRouter();
@@ -173,7 +174,7 @@ const Hero = () => {
           {/* Content Section */}
           <div className="flex-1 text-center lg:text-left space-y-6 lg:space-y-8 max-w-2xl">
             {/* Live Status */}
-            {webinars.length > 0 && (
+            {/* {webinars.length > 0 && (
               <div className="flex items-center justify-center lg:justify-start space-x-3">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                 <div className="text-sm text-gray-300">
@@ -185,7 +186,30 @@ const Hero = () => {
                   </span>
                 </div>
               </div>
-            )}
+            )} */}
+
+
+{webinars.length > 0 && (
+  <div className="flex items-center justify-center lg:justify-start space-x-3">
+    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+    <div className="text-sm text-gray-300 flex items-center space-x-4">
+      <span className="text-green-400 font-semibold">
+        LIVE WEBINAR
+      </span>
+      {/* Date */}
+      <div className="flex items-center space-x-1 text-gray-400">
+        <CalendarDays size={16} className="text-gray-400" />
+        <span>{new Date(webinars[0].start_time).toLocaleDateString()}</span>
+      </div>
+      {/* Time */}
+      <div className="flex items-center space-x-1 text-gray-400">
+        <Clock size={16} className="text-gray-400" />
+        <span>{new Date(webinars[0].start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
+      </div>
+    </div>
+  </div>
+)}
+
 
             {/* Main Heading */}
             <div className="space-y-4">
