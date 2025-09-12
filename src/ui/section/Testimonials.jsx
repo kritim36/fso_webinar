@@ -349,7 +349,7 @@ useEffect(() => {
       </div>
 
       {/* Floating testimonial count */}
-      <div
+      {/* <div
         className={`absolute top-8 right-8 bg-white/20 backdrop-blur-md rounded-2xl px-6 py-4 text-white border border-white/20 transform transition-all duration-1000 delay-500 ${
           isLoaded ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
         }`}
@@ -358,7 +358,7 @@ useEffect(() => {
           <div className="text-2xl font-bold">100+</div>
           <div className="text-sm opacity-90">Success Stories</div>
         </div>
-      </div>
+      </div> */}
 
       {/* Custom Styles */}
       <style jsx>{`

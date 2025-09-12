@@ -393,7 +393,7 @@ const Gallery = () => {
                 <img
                   src={`/images/stories/${story.image}`}
                   alt={story.name}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-80 md:h-72 sm:h-64 object-contain transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
 

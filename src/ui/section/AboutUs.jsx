@@ -131,7 +131,7 @@ export default function AboutUs() {
                   },
                   {
                     icon: FaAward,
-                    text: "19+ Years of Experience in admissions & visa processes",
+                    text: "15+ Years of Experience in admissions & visa processes",
                     color: "purple",
                   },
                   {

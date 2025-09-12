@@ -214,17 +214,26 @@ const Hero = () => {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Study in{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  South Korea
+                From Application to {" "}
+                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Visa
                 </span>
               </h1>
               <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
+                  Master Your Korean University Journey in 2 hours.{" "}
+                    <span className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
+                  Learn About Tuition Fees, Courses, Universities, Scholarships with{" "}
+                  <span className="text-orange-400 font-semibold">
+                    The Visa Man
+                  </span>
+                </span> 
+                </h2>
+              {/* <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
                 Learn About Tuition Fees, Courses, Universities with{" "}
                 <span className="text-orange-400 font-semibold">
                   The Visa Man
                 </span>
-              </h2>
+              </h2> */}
             </div>
 
             {/* Description */}
@@ -264,10 +273,10 @@ const Hero = () => {
           </div>
 
           {/* Image Section */}
-          <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
+          <div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none">
             <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/hero_image.png"
+                src="/herobg.png"
                 alt="Conference Speaker"
                 fill
                 className="object-cover"
