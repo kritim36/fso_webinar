@@ -33,9 +33,8 @@ export default function AboutUs() {
         <div className="grid lg:grid-cols-2 items-center gap-16 lg:gap-20">
           {/* Left Side - Enhanced Images */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-6">
-              {/* Main Event Image */}
-              <div className="relative group">
+            {/* <div className="grid grid-cols-2 gap-6">
+              <div className="hide lg:block relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
                 <div className="relative">
                   <img
@@ -43,7 +42,6 @@ export default function AboutUs() {
                     alt="Webinar Event"
                     className="rounded-xl shadow-2xl object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-[1.02]"
                   />
-                  {/* Overlay with stats */}
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <FaUsers className="text-blue-600 text-sm" />
@@ -55,7 +53,6 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* South Korea Image */}
               <div className="relative group mt-8">
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
                 <div className="relative">
@@ -64,7 +61,6 @@ export default function AboutUs() {
                     alt="South Korea Education"
                     className="rounded-xl shadow-2xl object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-[1.02]"
                   />
-                  {/* Overlay with feature */}
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <FaGlobe className="text-purple-600 text-sm" />
@@ -75,7 +71,54 @@ export default function AboutUs() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  {/* Main Event Image (only large screens) */}
+  <div className="hidden lg:block relative group">
+    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+    <div className="relative">
+      <img
+        src="/about.jpeg"
+        alt="Webinar Event"
+        className="rounded-xl shadow-2xl object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-[1.02]"
+      />
+
+      {/* Overlay with stats */}
+      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+        <div className="flex items-center space-x-2">
+          <FaUsers className="text-blue-600 text-sm" />
+          <span className="text-sm font-semibold text-gray-800">
+            24k+ Students
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* South Korea Image (always visible) */}
+  <div className="relative group mt-8 lg:mt-0">
+    <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+    <div className="relative">
+      <img
+        src="/southkorea.jpeg"
+        alt="South Korea Education"
+        className="rounded-xl shadow-2xl object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-[1.02]"
+      />
+
+      {/* Overlay with feature */}
+      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+        <div className="flex items-center space-x-2">
+          <FaGlobe className="text-purple-600 text-sm" />
+          <span className="text-sm font-semibold text-gray-800">
+            Global Expert
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
             {/* Floating decorative elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse"></div>

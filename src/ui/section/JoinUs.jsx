@@ -9,49 +9,95 @@ import {
   ShieldCheck,
   Calendar,
   Clock,
+  Utensils,
 } from "lucide-react";
 
 export default function WebinarSection() {
-  const features = [
+  // const features = [
+  //   {
+  //     icon: GraduationCap,
+  //     title: "World-ranked universities",
+  //     description: "Access to top Korean institutions",
+  //     color: "from-blue-500 to-indigo-600",
+  //     bgColor: "from-blue-50 to-indigo-50",
+  //   },
+  //   {
+  //     icon: Landmark,
+  //     title: "Affordable education",
+  //     description: "Quality education at reasonable costs",
+  //     color: "from-purple-500 to-violet-600",
+  //     bgColor: "from-purple-50 to-violet-50",
+  //   },
+  //   {
+  //     icon: Briefcase,
+  //     title: "Post-study work visa",
+  //     description: "Work opportunities after graduation",
+  //     color: "from-emerald-500 to-teal-600",
+  //     bgColor: "from-emerald-50 to-teal-50",
+  //   },
+  //   {
+  //     icon: Globe,
+  //     title: "Global career scope",
+  //     description: "International career opportunities",
+  //     color: "from-orange-500 to-red-600",
+  //     bgColor: "from-orange-50 to-red-50",
+  //   },
+  //   {
+  //     icon: Users,
+  //     title: "Expert mentorship",
+  //     description: "Guidance from industry professionals",
+  //     color: "from-cyan-500 to-blue-600",
+  //     bgColor: "from-cyan-50 to-blue-50",
+  //   },
+  //   {
+  //     icon: ShieldCheck,
+  //     title: "Safe & modern lifestyle",
+  //     description: "Secure and contemporary living",
+  //     color: "from-pink-500 to-rose-600",
+  //     bgColor: "from-pink-50 to-rose-50",
+  //   },
+  // ];
+
+    const features = [
     {
       icon: GraduationCap,
-      title: "World-ranked universities",
-      description: "Access to top Korean institutions",
+      title: "Top-ranked Universities",
+      description: "Including prestigious institutions like Seoul National University, KAIST & GSK University.",
       color: "from-blue-500 to-indigo-600",
       bgColor: "from-blue-50 to-indigo-50",
     },
     {
       icon: Landmark,
-      title: "Affordable education",
-      description: "Quality education at reasonable costs",
+      title: "Affordable Tuition Fees",
+      description: "Get world-class education with lower tuition compared to US, UK & Australia.",
       color: "from-purple-500 to-violet-600",
       bgColor: "from-purple-50 to-violet-50",
     },
     {
-      icon: Briefcase,
-      title: "Post-study work visa",
-      description: "Work opportunities after graduation",
+      icon: Utensils,
+      title: "Living & Lifestyle",
+      description: "Safe, modern cities with efficient transport, affordable food & student-friendly culture.",
+      color: "from-orange-500 to-red-600",
+      bgColor: "from-orange-50 to-red-50",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Safety & Security",
+      description: "South Korea is one of the safest countries with a high quality of life for students.",
       color: "from-emerald-500 to-teal-600",
       bgColor: "from-emerald-50 to-teal-50",
     },
     {
       icon: Globe,
-      title: "Global career scope",
-      description: "International career opportunities",
-      color: "from-orange-500 to-red-600",
-      bgColor: "from-orange-50 to-red-50",
-    },
-    {
-      icon: Users,
-      title: "Expert mentorship",
-      description: "Guidance from industry professionals",
+      title: "Top Courses & Careers",
+      description: "Engineering, IT, Business & Arts with global career scope & industry exposure.",
       color: "from-cyan-500 to-blue-600",
       bgColor: "from-cyan-50 to-blue-50",
     },
     {
-      icon: ShieldCheck,
-      title: "Safe & modern lifestyle",
-      description: "Secure and contemporary living",
+      icon: Briefcase,
+      title: "Post-study Work Visa (PSW)",
+      description: "Opportunities to stay back & build your career in Korea after graduation.",
       color: "from-pink-500 to-rose-600",
       bgColor: "from-pink-50 to-rose-50",
     },
@@ -84,17 +130,17 @@ export default function WebinarSection() {
           <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/30 rounded-full px-6 py-3 mb-8">
             <Calendar className="w-5 h-5 text-indigo-600" />
             <span className="text-sm font-semibold text-indigo-700 tracking-wide uppercase">
-              Join Us
+              South Korea Webinar 2025-26
             </span>
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
             <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Study in South Korea
+              Why Study in South Korea?
             </span>
             <br />
             <span className="text-3xl lg:text-4xl text-gray-700 font-semibold">
-              Webinar 2025-26
+              Insights with Bhavik Siddhpura
             </span>
           </h2>
 
