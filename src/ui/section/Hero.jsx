@@ -135,9 +135,8 @@ const Hero = () => {
               style={{
                 left: `${10 + i * 7}%`,
                 top: `${20 + i * 5}%`,
-                transform: `translate(${mousePosition.x * 50}px, ${
-                  mousePosition.y * 30
-                }px)`,
+                transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 30
+                  }px)`,
               }}
             />
           ))}
@@ -162,9 +161,8 @@ const Hero = () => {
               linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
-            backgroundPosition: `${mousePosition.x * 20}px ${
-              mousePosition.y * 20
-            }px`,
+            backgroundPosition: `${mousePosition.x * 20}px ${mousePosition.y * 20
+              }px`,
           }}
         />
       </div>
@@ -189,45 +187,45 @@ const Hero = () => {
             )} */}
 
 
-{webinars.length > 0 && (
-  <div className="flex items-center justify-center lg:justify-start space-x-3">
-    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-    <div className="text-sm text-gray-300 flex items-center space-x-4">
-      <span className="text-green-400 font-semibold">
-        LIVE WEBINAR
-      </span>
-      {/* Date */}
-      <div className="flex items-center space-x-1 text-gray-400">
-        <CalendarDays size={16} className="text-gray-400" />
-        <span>{new Date(webinars[0].start_time).toLocaleDateString()}</span>
-      </div>
-      {/* Time */}
-      <div className="flex items-center space-x-1 text-gray-400">
-        <Clock size={16} className="text-gray-400" />
-        <span>{new Date(webinars[0].start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
-      </div>
-    </div>
-  </div>
-)}
+            {webinars.length > 0 && (
+              <div className="flex items-center justify-center lg:justify-start space-x-3">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="text-sm text-gray-300 flex items-center space-x-4">
+                  <span className="text-green-400 font-semibold">
+                    LIVE WEBINAR
+                  </span>
+                  {/* Date */}
+                  <div className="flex items-center space-x-1 text-gray-400">
+                    <CalendarDays size={16} className="text-gray-400" />
+                    <span>{new Date(webinars[0].start_time).toLocaleDateString()}</span>
+                  </div>
+                  {/* Time */}
+                  <div className="flex items-center space-x-1 text-gray-400">
+                    <Clock size={16} className="text-gray-400" />
+                    <span>{new Date(webinars[0].start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
+                  </div>
+                </div>
+              </div>
+            )}
 
 
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 From Application to {" "}
-                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   Visa
                 </span>
               </h1>
               <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
-                  Master Your Korean University Journey in 2 hours.{" "}
-                    <span className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
+                Master Your Korean University Journey in 2 hours.{" "}
+                <span className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
                   Learn About Tuition Fees, Courses, Universities, Scholarships with{" "}
                   <span className="text-orange-400 font-semibold">
                     The Visa Man
                   </span>
-                </span> 
-                </h2>
+                </span>
+              </h2>
               {/* <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
                 Learn About Tuition Fees, Courses, Universities with{" "}
                 <span className="text-orange-400 font-semibold">
@@ -273,10 +271,10 @@ const Hero = () => {
           </div>
 
           {/* Image Section */}
-          <div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none">
+          {/* <div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none">
             <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/herobg.png"
+                src="/webinar.jpg"
                 alt="Conference Speaker"
                 fill
                 className="object-cover"
@@ -286,7 +284,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
 
-            {/* Floating Stats */}
             <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-center">
                 <div className="text-2xl font-bold text-white">100+</div>
@@ -300,7 +297,48 @@ const Hero = () => {
                 <div className="text-xs text-gray-300">Visa Success</div>
               </div>
             </div>
-          </div>
+          </div> */}
+          {/* Image Section */}
+<div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none flex flex-col items-center">
+  <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
+    <Image
+      src="/webinar.jpg"
+      alt="Conference Speaker"
+      fill
+      className="object-cover"
+      priority
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+  </div>
+
+  {/* Lower Third Graphic */}
+  {/* <div className="-mt-1 w-full flex justify-center">
+    <Image
+      src="/BhavikTheVISAMan.png"
+      alt="Bhavik Siddhpura - The Visa Man"
+      width={600}   // adjust as needed
+      height={200}  // maintain aspect ratio
+      className="object-contain"
+    />
+  </div> */}
+
+  {/* Floating Stats */}
+  <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+    <div className="text-center">
+      <div className="text-2xl font-bold text-white">100+</div>
+      <div className="text-xs text-gray-300">Success Stories</div>
+    </div>
+  </div>
+
+  <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+    <div className="text-center">
+      <div className="text-2xl font-bold text-white">95%</div>
+      <div className="text-xs text-gray-300">Visa Success</div>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
 
