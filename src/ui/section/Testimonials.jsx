@@ -160,18 +160,6 @@ useEffect(() => {
 
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-64 h-64 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${4 + Math.random() * 2}s`,
-            }}
-          />
-        ))} */}
         {bubbles.map((style, i) => (
     <div
       key={i}
@@ -184,7 +172,7 @@ useEffect(() => {
       {/* Navigation Arrows */}
       <button
         onClick={handlePrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 group"
+        className="hidden absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full lg:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 group"
         disabled={isAnimating}
       >
         <svg
@@ -204,7 +192,7 @@ useEffect(() => {
 
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 group"
+        className="hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full lg:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 group"
         disabled={isAnimating}
       >
         <svg
@@ -224,17 +212,17 @@ useEffect(() => {
 
       {/* Main Testimonial Content */}
       <div
-        className={`absolute bottom-0 left-0 w-full md:w-3/5 lg:w-1/2 h-[75%] transform transition-all duration-1000 ${
+        className={`absolute bottom-0 left-0 w-full md:w-3/5 lg:w-1/2 transform transition-all duration-1000 ${
           isLoaded ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
         }`}
       >
         {/* Glass morphism container */}
-        <div className="h-full bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-xl border-r border-white/20 shadow-2xl relative overflow-hidden">
+        <div className="w-full bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-xl border-r border-white/20 shadow-2xl relative overflow-hidden rounded-tr-2xl">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-full"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-tr-full"></div>
 
-          <div className="relative h-full p-8 md:p-12 flex flex-col justify-between">
+          <div className="relative p-8 md:p-12 flex flex-col gap-6 justify-between">
             {/* Header Section */}
             <div
               className={`transform transition-all duration-700 delay-300 ${
@@ -347,18 +335,6 @@ useEffect(() => {
           </div>
         </div>
       </div>
-
-      {/* Floating testimonial count */}
-      {/* <div
-        className={`absolute top-8 right-8 bg-white/20 backdrop-blur-md rounded-2xl px-6 py-4 text-white border border-white/20 transform transition-all duration-1000 delay-500 ${
-          isLoaded ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-        }`}
-      >
-        <div className="text-center">
-          <div className="text-2xl font-bold">100+</div>
-          <div className="text-sm opacity-90">Success Stories</div>
-        </div>
-      </div> */}
 
       {/* Custom Styles */}
       <style jsx>{`
