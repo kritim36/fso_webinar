@@ -89,7 +89,7 @@ export default function AboutUs() {
         <div className="flex items-center space-x-2">
           <FaUsers className="text-blue-600 text-sm" />
           <span className="text-sm font-semibold text-gray-800">
-            24k+ Students
+            2k+ Students
           </span>
         </div>
       </div>

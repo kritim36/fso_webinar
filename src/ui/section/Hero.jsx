@@ -302,7 +302,7 @@ const Hero = () => {
 <div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none flex flex-col items-center">
   <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
     <Image
-      src="/webinar.jpg"
+      src="/webinar_visaman.jpg"
       alt="Conference Speaker"
       fill
       className="object-cover"
@@ -311,17 +311,6 @@ const Hero = () => {
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
   </div>
-
-  {/* Lower Third Graphic */}
-  {/* <div className="-mt-1 w-full flex justify-center">
-    <Image
-      src="/BhavikTheVISAMan.png"
-      alt="Bhavik Siddhpura - The Visa Man"
-      width={600}   // adjust as needed
-      height={200}  // maintain aspect ratio
-      className="object-contain"
-    />
-  </div> */}
 
   {/* Floating Stats */}
   <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">

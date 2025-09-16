@@ -110,7 +110,7 @@ const WhyChooseUs = () => {
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 py-6 sm:pt-8 border-t border-gray-200/50">
                 {[
-                  { number: "24k+", label: "Students Guided" },
+                  { number: "2k+", label: "Students Guided" },
                   { number: "15+", label: "Years Experience" },
                   { number: "95%", label: "Success Rate" },
                 ].map((stat, index) => (
