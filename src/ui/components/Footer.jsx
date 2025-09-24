@@ -84,11 +84,11 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: FaPhone, text: "+91 9876543210", href: "tel:+919876543210" },
+    { icon: FaPhone, text: "+91 9558550056 ", href: "tel:+919558550056" },
     {
       icon: FaEnvelope,
-      text: "info@firststep-overseas.com",
-      href: "mailto:info@firststep-overseas.com",
+      text: "admission@firststepoverseas.com",
+      href: "mailto:admission@firststepoverseas.com",
     },
     { icon: FaLocationDot, text: "Gujarat, India", href: "#" },
   ];
