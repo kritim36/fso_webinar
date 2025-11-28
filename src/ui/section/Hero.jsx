@@ -195,12 +195,12 @@ const Hero = () => {
                     LIVE WEBINAR
                   </span>
                   {/* Date */}
-                  <div className="flex items-center space-x-1 text-white">
+                  <div className="flex items-center space-x-1 text-white font-bold">
                     <CalendarDays size={16} className="text-white" />
                     <span>{new Date(webinars[0].start_time).toLocaleDateString()}</span>
                   </div>
                   {/* Time */}
-                  <div className="flex items-center space-x-1 text-white">
+                  <div className="flex items-center space-x-1 text-white font-bold">
                     <Clock size={16} className="text-white" />
                     <span>{new Date(webinars[0].start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
                   </div>
