@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/ui/components/Footer";
 import StoreProvider from "@/store/StoreProvider";
 import Script from "next/script";
+import MetaPixel from "@/ui/components/MetaPixel";
 
 export const metadata = {
   title: "First Step Overseas Workshop",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
+         <MetaPixel />
         <StoreProvider>
           <Navbar />
             {children}
