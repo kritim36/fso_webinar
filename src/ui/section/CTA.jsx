@@ -13,7 +13,7 @@ const CTA = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
-    webinar_id: "",
+    webinar_id: 1,
     name: "",
     email: "",
     phone: "",
@@ -37,11 +37,11 @@ const CTA = () => {
   }, [dispatch]);
 
   // Set default webinar_id
-  useEffect(() => {
-    if (webinars.length > 0) {
-      setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
-    }
-  }, [webinars]);
+  // useEffect(() => {
+  //   if (webinars.length > 0) {
+  //     setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
+  //   }
+  // }, [webinars]);
 
   // Razorpay launch
   useEffect(() => {

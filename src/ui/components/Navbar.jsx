@@ -26,7 +26,7 @@ export default function Navbar() {
       (state) => state.webinar
     );
   const [formData, setFormData] = useState({
-    webinar_id: "",
+    webinar_id: 1,
     name: "",
     email: "",
     phone: "",
@@ -38,11 +38,11 @@ export default function Navbar() {
     }, [dispatch]);
   
     // Set default webinar_id
-    useEffect(() => {
-      if (webinars.length > 0) {
-        setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
-      }
-    }, [webinars]);
+    // useEffect(() => {
+    //   if (webinars.length > 0) {
+    //     setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
+    //   }
+    // }, [webinars]);
 
       // Launch Razorpay
       useEffect(() => {

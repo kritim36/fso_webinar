@@ -1,15 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const baseUrl = "https://api-webinar.ctrlbits.com";
+const baseUrl = "https://api-workshop.firststepoverseas.com";
 
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPHz848o3N-_RwBgLwpzxcRk533xVoilTHuiXAVx4FC6mE_T6p3U99YlytyWRKAkWg8w/exec"; 
 const APPS_SCRIPT_TOKEN = "MYWEBINAR1234";
 
 // Get webinar list
 export const fetchWebinars = createAsyncThunk("webinar/fetchWebinars", async () => {
-  const res = await axios.get(`${baseUrl}/webinars`);
-  return res.data.results; 
+  const res = await axios.get(`${baseUrl}/webinars/1/`);
+  return res.data; 
 });
 
 // Register for webinar
@@ -78,7 +78,8 @@ export const verifyPayment = createAsyncThunk("webinar/verifyPayment", async (pa
 const webinarSlice = createSlice({
   name: "webinar",
   initialState: {
-    webinars: [],
+    // webinars: [],
+    webinars: {},
     loading: false,
     error: null,
     registration: null, 

@@ -16,7 +16,7 @@ export default function FixedFooterCTA() {
   );
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
-    webinar_id: "",
+    webinar_id: 1,
     name: "",
     email: "",
     phone: "",
@@ -28,11 +28,11 @@ export default function FixedFooterCTA() {
     }, [dispatch]);
   
     // Set default webinar_id
-    useEffect(() => {
-      if (webinars.length > 0) {
-        setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
-      }
-    }, [webinars]);
+    // useEffect(() => {
+    //   if (webinars.length > 0) {
+    //     setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
+    //   }
+    // }, [webinars]);
 
       // Launch Razorpay
       useEffect(() => {

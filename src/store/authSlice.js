@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const baseUrl = "https://api-webinar.ctrlbits.com/";
+const baseUrl = "https://api-workshop.firststepoverseas.com/";
 
 // Register user (attendee/host)
 export const registerUser = createAsyncThunk(

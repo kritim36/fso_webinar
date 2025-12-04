@@ -22,7 +22,7 @@ const Hero = () => {
   const [showForm, setShowForm] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [formData, setFormData] = useState({
-    webinar_id: "",
+    webinar_id: 1,
     name: "",
     email: "",
     phone: "",
@@ -47,11 +47,11 @@ const Hero = () => {
   }, [dispatch]);
 
   // Set default webinar_id
-  useEffect(() => {
-    if (webinars.length > 0) {
-      setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
-    }
-  }, [webinars]);
+  // useEffect(() => {
+  //   if (webinars.length > 0) {
+  //     setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
+  //   }
+  // }, [webinars]);
 
   // Launch Razorpay
   useEffect(() => {
@@ -172,22 +172,7 @@ const Hero = () => {
           {/* Content Section */}
           <div className="flex-1 text-center lg:text-left space-y-6 lg:space-y-8 max-w-2xl">
             {/* Live Status */}
-            {/* {webinars.length > 0 && (
-              <div className="flex items-center justify-center lg:justify-start space-x-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <div className="text-sm text-gray-300">
-                  <span className="text-green-400 font-semibold">
-                    LIVE WEBINAR
-                  </span>
-                  <span className="ml-2 text-gray-400">
-                    {new Date(webinars[0].start_time).toLocaleDateString()}
-                  </span>
-                </div>
-              </div>
-            )} */}
-
-
-            {webinars.length > 0 && (
+            {webinars && (
               <div className="flex items-center justify-center lg:justify-start space-x-3">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                 <div className="text-sm text-gray-300 flex items-center space-x-4">
@@ -197,12 +182,12 @@ const Hero = () => {
                   {/* Date */}
                   <div className="flex items-center space-x-1 text-white font-bold">
                     <CalendarDays size={16} className="text-white" />
-                    <span>{new Date(webinars[0].start_time).toLocaleDateString()}</span>
+                    <span>{new Date(webinars.start_time).toLocaleDateString()}</span>
                   </div>
                   {/* Time */}
                   <div className="flex items-center space-x-1 text-white font-bold">
                     <Clock size={16} className="text-white" />
-                    <span>{new Date(webinars[0].start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
+                    <span>{new Date(webinars.start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
                   </div>
                 </div>
               </div>
@@ -226,12 +211,6 @@ const Hero = () => {
                   </span>
                 </span>
               </h2>
-              {/* <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-medium">
-                Learn About Tuition Fees, Courses, Universities with{" "}
-                <span className="text-orange-400 font-semibold">
-                  The Visa Man
-                </span>
-              </h2> */}
             </div>
 
             {/* Description */}
@@ -270,34 +249,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image Section */}
-          {/* <div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none">
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/webinar.jpg"
-                alt="Conference Speaker"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-            </div>
-
-            <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">100+</div>
-                <div className="text-xs text-gray-300">Success Stories</div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">95%</div>
-                <div className="text-xs text-gray-300">Visa Success</div>
-              </div>
-            </div>
-          </div> */}
           {/* Image Section */}
 <div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none flex flex-col items-center">
   <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">

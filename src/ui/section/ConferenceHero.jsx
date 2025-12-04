@@ -12,7 +12,7 @@ export default function ConferenceHero() {
   const [showForm, setShowForm] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
-    webinar_id: "",
+    webinar_id: 1,
     name: "",
     email: "",
     phone: "",
@@ -26,11 +26,11 @@ export default function ConferenceHero() {
   }, [dispatch]);
 
   // Set default webinar_id
-  useEffect(() => {
-    if (webinars.length > 0) {
-      setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
-    }
-  }, [webinars]);
+  // useEffect(() => {
+  //   if (webinars.length > 0) {
+  //     setFormData((prev) => ({ ...prev, webinar_id: webinars[0].id }));
+  //   }
+  // }, [webinars]);
 
     useEffect(() => {
       if (registration?.razorpay_order_id) {
@@ -81,8 +81,8 @@ export default function ConferenceHero() {
 
   // Countdown timer
   useEffect(() => {
-    if (webinars.length === 0) return;
-    const targetDate = new Date(webinars[0].start_time);
+    // if (webinars.length === 0) return;
+    const targetDate = new Date(webinars.start_time);
 
     const calculateTimeLeft = () => {
       const difference = targetDate - new Date();
