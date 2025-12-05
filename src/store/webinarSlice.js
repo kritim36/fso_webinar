@@ -3,7 +3,7 @@ import axios from "axios";
 
 const baseUrl = "https://api-workshop.firststepoverseas.com";
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPHz848o3N-_RwBgLwpzxcRk533xVoilTHuiXAVx4FC6mE_T6p3U99YlytyWRKAkWg8w/exec"; 
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPtlQ6b04pJTCVHPEx6GoEwry8AnmvDXryZ-Wkst8PPx6BRjUh_UGMJBdeHb1gPrWudA/exec"; 
 const APPS_SCRIPT_TOKEN = "MYWEBINAR1234";
 
 // Get webinar list
