@@ -163,7 +163,7 @@ export default function Navbar() {
           <div className="flex items-center justify-center gap-2">
             <div className="w-4 h-4 lg:w-2 lg:h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span>
-              🚀 A brighter future awaits you on {new Date(webinars.start_time).toLocaleDateString()} at {new Date(webinars.start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}— Join our South Korea Workshop for only INR 199
+              🚀 Join our South Korea Workshop on {new Date(webinars.start_time).toLocaleDateString()} at {new Date(webinars.start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}— for only INR 199
               {/* 🎯 Join our exclusive South Korea workshop @ INR 199 - Limited seats
               available! */}
             </span>
