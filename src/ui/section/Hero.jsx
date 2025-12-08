@@ -104,7 +104,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 mt-12 lg:mt-0 pt-12 lg:pt-20"
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 mt-12 lg:mt-0 pt-20 lg:pt-20"
     >
       {/* Interactive background elements */}
       <div className="absolute inset-0 overflow-hidden">

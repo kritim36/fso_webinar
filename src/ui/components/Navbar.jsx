@@ -36,6 +36,7 @@ export default function Navbar() {
     useEffect(() => {
       dispatch(fetchWebinars());
     }, [dispatch]);
+
   
     // Set default webinar_id
     // useEffect(() => {
@@ -152,17 +153,19 @@ export default function Navbar() {
       >
         {/* Top notification bar */}
         <div
-          className={`bg-gradient-to-r from-[#3b0a77] to-purple-600 text-white text-center py-2 text-sm font-medium transform transition-all duration-700 ${
+          className={`bg-gradient-to-r from-[#3b0a77] to-purple-600 text-white text-center py-2 px-1 text-sm font-medium transform transition-all duration-700 ${
             isLoaded
               ? "translate-y-0 opacity-100"
               : "-translate-y-full opacity-0"
           }`}
         >
+          {webinars && (
           <div className="flex items-center justify-center gap-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <div className="w-4 h-4 lg:w-2 lg:h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span>
-              🎯 Join our exclusive South Korea workshop @ INR 199 - Limited seats
-              available!
+              🚀 A brighter future awaits you on {new Date(webinars.start_time).toLocaleDateString()} at {new Date(webinars.start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}— Join our South Korea Workshop for only INR 199
+              {/* 🎯 Join our exclusive South Korea workshop @ INR 199 - Limited seats
+              available! */}
             </span>
             <button
               onClick={() => setShowForm(true)}
@@ -171,6 +174,7 @@ export default function Navbar() {
               Register Now
             </button>
           </div>
+          )}
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
