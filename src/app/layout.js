@@ -6,10 +6,10 @@ import Script from "next/script";
 import MetaPixel from "@/ui/components/MetaPixel";
 
 export const metadata = {
-  title: "First Step Overseas Workshop",
+  title: "Studiy in South Korea Workshop 2026",
   description: "Join our exclusive paid workshop and discover proven strategies for student visas, scholarships, and admission success.",
   openGraph: {
-    title: "First Step Overseas Workshop",
+    title: "Studiy in South Korea Workshop 2026",
     description: "Join our workshops to learn and explore opportunities overseas.",
     url: "https://workshop.firststepoverseas.com/",
     siteName: "First Step Overseas",
