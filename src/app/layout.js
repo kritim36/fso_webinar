@@ -26,6 +26,35 @@ export const metadata = {
   },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://workshop.firststepoverseas.com/"
+  },
+  "headline": "Study in South Korea Workshop in 2026 | From Application to Visa",
+  "description":
+    "What You’ll Learn from the South Korea Workshop 2026: Tuition Fees, Courses, Universities, Scholarships & Visa Guidance with The Visa Man.",
+  "image": "https://workshop.firststepoverseas.com/og-image.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "First Step Overseas",
+    "url": "https://workshop.firststepoverseas.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "South Korea Workshop",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://workshop.firststepoverseas.com/logo.png"
+    }
+  },
+  "datePublished": "2026-01-20",
+  "dateModified": "2026-01-20"
+};
+
+
 
 export default function RootLayout({ children }) {
   return (
@@ -36,6 +65,15 @@ export default function RootLayout({ children }) {
           src="https://checkout.razorpay.com/v1/checkout.js"
           strategy="afterInteractive"
         />
+        <Script
+          id="article-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema),
+          }}
+        />
+
       </head>
 
       <body>
