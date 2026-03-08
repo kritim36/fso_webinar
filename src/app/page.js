@@ -46,7 +46,7 @@ export default function Home() {
       
       <Testimonials />
       <Gallery />
-      <AchievementCarousel />
+      {/* <AchievementCarousel /> */}
       <FAQ />
       {/* <PricingSection />
       <Blog /> */}

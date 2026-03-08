@@ -111,10 +111,10 @@ export default function Speakers() {
               {/* Enhanced description */}
               <p className="text-lg text-gray-600 mb-8 leading-relaxed font-medium">
                 Mr. Bhavik Siddhpura is a mentor, renowned study abroad speaker, motivator, 
-                entrepreneur, YouTuber the youngest pioneer in overseas education with more 
+                entrepreneur, YouTuber, and  the youngest pioneer in overseas education with more 
                 than 15 years of expertise. He is a British Council & IDP Certified trainer, 
-                has counselled more than 24000 Students in 15 years of journey. Proud BNI member 
-                and has been awarded numerous time as Best Performer by British Council & IDP.
+                has counselled more than 24000 students in 15 years of journey. Proud BNI member 
+                and has been awarded numerous times as Best Performer by British Council & IDP.
               </p>
 
             </div>

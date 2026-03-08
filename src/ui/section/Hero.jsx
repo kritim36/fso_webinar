@@ -170,7 +170,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen py-12 gap-8 lg:gap-12">
           {/* Content Section */}
-          <div className="flex-1 text-center lg:text-left space-y-6 lg:space-y-8 max-w-2xl">
+          <div className="order-2 lg:order-1 flex-1 text-center lg:text-left space-y-6 lg:space-y-8 max-w-2xl">
             {/* Live Status */}
             {webinars && (
               <div className="flex items-center justify-center lg:justify-start space-x-3">
@@ -250,34 +250,34 @@ const Hero = () => {
           </div>
 
           {/* Image Section */}
-<div className="flex-1 mt-2 relative w-full max-w-lg lg:max-w-none flex flex-col items-center">
-  <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
-    <Image
-      src="/webinar_visaman.jpg"
-      alt="Conference Speaker"
-      fill
-      className="object-cover"
-      priority
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-  </div>
+          <div className="order-1 lg:order-2  flex-1 mt-2 relative w-full max-w-lg lg:max-w-none flex flex-col items-center">
+            <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/webinar_visaman.jpg"
+                alt="Conference Speaker"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+            </div>
 
-  {/* Floating Stats */}
-  <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-    <div className="text-center">
-      <div className="text-2xl font-bold text-white">100+</div>
-      <div className="text-xs text-gray-300">Success Stories</div>
-    </div>
-  </div>
+            {/* Floating Stats */}
+            <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">100+</div>
+                <div className="text-xs text-gray-300">Success Stories</div>
+              </div>
+            </div>
 
-  <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-    <div className="text-center">
-      <div className="text-2xl font-bold text-white">95%</div>
-      <div className="text-xs text-gray-300">Visa Success</div>
-    </div>
-  </div>
-</div>
+            <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">95%</div>
+                <div className="text-xs text-gray-300">Visa Success</div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>

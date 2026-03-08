@@ -11,58 +11,17 @@ import {
   Clock,
   Utensils,
 } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 export default function WebinarSection() {
-  // const features = [
-  //   {
-  //     icon: GraduationCap,
-  //     title: "World-ranked universities",
-  //     description: "Access to top Korean institutions",
-  //     color: "from-blue-500 to-indigo-600",
-  //     bgColor: "from-blue-50 to-indigo-50",
-  //   },
-  //   {
-  //     icon: Landmark,
-  //     title: "Affordable education",
-  //     description: "Quality education at reasonable costs",
-  //     color: "from-purple-500 to-violet-600",
-  //     bgColor: "from-purple-50 to-violet-50",
-  //   },
-  //   {
-  //     icon: Briefcase,
-  //     title: "Post-study work visa",
-  //     description: "Work opportunities after graduation",
-  //     color: "from-emerald-500 to-teal-600",
-  //     bgColor: "from-emerald-50 to-teal-50",
-  //   },
-  //   {
-  //     icon: Globe,
-  //     title: "Global career scope",
-  //     description: "International career opportunities",
-  //     color: "from-orange-500 to-red-600",
-  //     bgColor: "from-orange-50 to-red-50",
-  //   },
-  //   {
-  //     icon: Users,
-  //     title: "Expert mentorship",
-  //     description: "Guidance from industry professionals",
-  //     color: "from-cyan-500 to-blue-600",
-  //     bgColor: "from-cyan-50 to-blue-50",
-  //   },
-  //   {
-  //     icon: ShieldCheck,
-  //     title: "Safe & modern lifestyle",
-  //     description: "Secure and contemporary living",
-  //     color: "from-pink-500 to-rose-600",
-  //     bgColor: "from-pink-50 to-rose-50",
-  //   },
-  // ];
 
     const features = [
     {
       icon: GraduationCap,
       title: "Top-ranked Universities",
-      description: "Including prestigious institutions like Seoul National University, KAIST & GSK University.",
+      description: "Including prestigious institutions like Seoul National University, KAIST & GKS University.",
       color: "from-blue-500 to-indigo-600",
       bgColor: "from-blue-50 to-indigo-50",
     },
@@ -126,7 +85,7 @@ export default function WebinarSection() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/30 rounded-full px-6 py-3 mb-8">
             <Calendar className="w-5 h-5 text-indigo-600" />
             <span className="text-sm font-semibold text-indigo-700 tracking-wide uppercase">
@@ -154,7 +113,7 @@ export default function WebinarSection() {
           </p>
 
           {/* Quick info badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-full px-4 py-2 shadow-lg">
               <Clock className="w-4 h-4 text-indigo-600" />
               <span className="text-sm font-medium text-gray-700">
@@ -177,31 +136,24 @@ export default function WebinarSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="group relative">
-              {/* Card background with glassmorphism */}
               <div className="absolute inset-0 bg-white/60 backdrop-blur-xl rounded-2xl border border-white/40 shadow-xl group-hover:shadow-2xl transition-all duration-500"></div>
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${feature.bgColor} opacity-0 group-hover:opacity-50 rounded-2xl transition-opacity duration-500`}
               ></div>
-
-              {/* Card content */}
               <div className="relative z-10 p-8 text-center">
-                {/* Icon container */}
                 <div className="relative mb-6">
                   <div
                     className={`w-20 h-20 mx-auto bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 shadow-current/25`}
                   >
                     <feature.icon className="w-10 h-10 text-white" />
                   </div>
-                  {/* Glow effect */}
                   <div
                     className={`absolute inset-0 w-20 h-20 mx-auto bg-gradient-to-br ${feature.color} rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-500`}
                   ></div>
                 </div>
-
-                {/* Text content */}
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300">
                   {feature.title}
                 </h3>
@@ -209,8 +161,6 @@ export default function WebinarSection() {
                   {feature.description}
                 </p>
               </div>
-
-              {/* Hover border effect */}
               <div
                 className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${feature.color} p-[1px]`}
               >
@@ -218,10 +168,87 @@ export default function WebinarSection() {
               </div>
             </div>
           ))}
+        </div> */}
+
+        {/* Features Section */}
+
+        {/* Desktop Grid */}
+        <div className="hidden lg:grid grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div key={index} className="group relative">
+              <div className="absolute inset-0 bg-white/60 backdrop-blur-xl rounded-2xl border border-white/40 shadow-xl group-hover:shadow-2xl transition-all duration-500"></div>
+
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${feature.bgColor} opacity-0 group-hover:opacity-50 rounded-2xl transition-opacity duration-500`}
+              ></div>
+
+              <div className="relative z-10 p-8 text-center">
+                <div className="relative mb-6">
+                  <div
+                    className={`w-20 h-20 mx-auto bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-500`}
+                  >
+                    <feature.icon className="w-10 h-10 text-white" />
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Slider */}
+        <div className="lg:hidden">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView={1}
+            spaceBetween={20}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+          >
+            {features.map((feature, index) => (
+              <SwiperSlide key={index}>
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-white/60 backdrop-blur-xl rounded-2xl border border-white/40 shadow-xl"></div>
+
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${feature.bgColor} opacity-30 rounded-2xl`}
+                  ></div>
+
+                  <div className="relative z-10 p-8 text-center">
+                    <div className="relative mb-6">
+                      <div
+                        className={`w-20 h-20 mx-auto bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                      >
+                        <feature.icon className="w-10 h-10 text-white" />
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="text-center mt-20">
+        <div className="text-center mt-8">
           <div className="relative inline-block">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-30"></div>
             <div className="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-2xl shadow-xl">

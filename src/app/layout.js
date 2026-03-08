@@ -4,12 +4,13 @@ import Footer from "@/ui/components/Footer";
 import StoreProvider from "@/store/StoreProvider";
 import Script from "next/script";
 import MetaPixel from "@/ui/components/MetaPixel";
+import Whatsapp from "@/ui/components/Whatsapp";
 
 export const metadata = {
-  title: "Studiy in South Korea Workshop 2026",
+  title: "Study in South Korea Workshop 2026",
   description: "Join our exclusive paid workshop and discover proven strategies for student visas, scholarships, and admission success.",
   openGraph: {
-    title: "Studiy in South Korea Workshop 2026",
+    title: "Study in South Korea Workshop 2026",
     description: "Join our workshops to learn and explore opportunities overseas.",
     url: "https://workshop.firststepoverseas.com/",
     siteName: "First Step Overseas",
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
             {children}
           <Footer />
         </StoreProvider>
+        {/* <Whatsapp /> */}
       </body>
     </html>
   );
