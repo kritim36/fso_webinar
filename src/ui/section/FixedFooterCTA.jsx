@@ -85,17 +85,14 @@ export default function FixedFooterCTA() {
   return (
     <>
       {/* CTA Footer (only visible on mobile) */}
-      <div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-blue-50 to-white shadow-lg border-t border-gray-200 z-40 md:hidden">
+      {/* <div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-blue-50 to-white shadow-lg border-t border-gray-200 z-40 md:hidden">
         <div className="max-w-7xl mx-auto w-full px-4 py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          {/* Price + CTA */}
           <div className="flex flex-row items-center justify-between w-full gap-3">
-            {/* Price Section */}
             <div className="text-left">
               <p className="text-lg font-bold text-blue-600">₹199/-</p>
               <p className="text-sm text-gray-500 line-through">₹299</p>
             </div>
 
-            {/* CTA Button */}
             <button
               onClick={() => setShowForm(true)}
               className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-sm rounded-md shadow-md hover:opacity-90 transition text-center"
@@ -104,7 +101,50 @@ export default function FixedFooterCTA() {
             </button>
           </div>
         </div>
+      </div> */}
+
+      {/* CTA Footer (only visible on mobile) */}
+<div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-blue-50 to-white shadow-lg border-t border-gray-200 z-40 md:hidden">
+  <div className="max-w-7xl mx-auto w-full px-4 py-3 flex flex-col gap-2">
+
+    {webinars && (
+      <p className="text-xs text-center text-gray-700 font-medium">
+        🚀 South Korea Workshop on{" "}
+        <span className="font-bold text-purple-700 bg-purple-100 px-1 rounded">
+          {new Date(webinars.start_time).toLocaleDateString()}
+        </span>{" "}
+        at{" "}
+        <span className="font-bold text-purple-700 bg-purple-100 px-1 rounded">
+          {new Date(webinars.start_time).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </span>
+      </p>
+    )}
+
+    {/* Price + CTA */}
+    <div className="flex items-center justify-between gap-3">
+
+      {/* Price Section */}
+      <div className="text-left">
+        <p className="text-xl font-extrabold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">
+          ₹199
+        </p>
+        <p className="text-xs text-gray-400 line-through">₹299</p>
       </div>
+
+      {/* CTA Button */}
+      <button
+        onClick={() => setShowForm(true)}
+        className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-sm font-semibold rounded-md shadow-md hover:opacity-90 transition text-center"
+      >
+        Register Now
+      </button>
+
+    </div>
+  </div>
+</div>
 
       {/* Popup Form */}
       {showForm && (

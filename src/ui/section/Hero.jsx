@@ -253,7 +253,7 @@ const Hero = () => {
           <div className="order-1 lg:order-2  flex-1 mt-2 relative w-full max-w-lg lg:max-w-none flex flex-col items-center">
             <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/webinar_visaman.jpg"
+                src="/bhavikvisaman.jpeg"
                 alt="Conference Speaker"
                 fill
                 className="object-cover"

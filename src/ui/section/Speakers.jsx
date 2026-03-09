@@ -1,5 +1,5 @@
 "use client";
- import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const speakers = [
   {
@@ -57,7 +57,7 @@ export default function Speakers() {
                   <p className="px-6 mb-4 text-sm">
                     Contact Detail
                   </p>
-                  <div className="flex space-x-3">
+                  {/* <div className="flex space-x-3">
                     <a href="#" className="p-2 bg-white text-blue-600 rounded-full hover:bg-gray-200">
                       <FaFacebookF />
                     </a>
@@ -69,6 +69,44 @@ export default function Speakers() {
                     </a>
                     <a href="#" className="p-2 bg-white text-blue-600 rounded-full hover:bg-gray-200">
                       <FaInstagram />
+                    </a>
+                  </div> */}
+
+                  <div className="flex space-x-3">
+                    <a 
+                      href="https://www.facebook.com/bhavik.siddhpura.9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white text-blue-600 rounded-full hover:bg-gray-200"
+                    >
+                      <FaFacebookF />
+                    </a>
+
+                    <a 
+                      href="https://www.linkedin.com/in/bhavik-siddhpura-b0543b66/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white text-blue-600 rounded-full hover:bg-gray-200"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+
+                    <a 
+                      href="https://www.instagram.com/bhavik.siddhpura/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white text-blue-600 rounded-full hover:bg-gray-200"
+                    >
+                      <FaInstagram />
+                    </a>
+
+                    <a 
+                      href="https://www.youtube.com/@TheVisaMan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white text-red-600 rounded-full hover:bg-gray-200"
+                    >
+                      <FaYoutube />
                     </a>
                   </div>
                 </div>

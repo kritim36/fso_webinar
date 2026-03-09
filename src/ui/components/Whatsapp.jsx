@@ -6,7 +6,7 @@ export default function Whatsapp() {
   const message = encodeURIComponent("Can I know about Webinar?");
 
   return (
-    <div className="fixed bottom-16 lg:bottom-8 left-6 z-50">
+    <div className="fixed bottom-20 lg:bottom-8 left-6 z-20">
       <a
         href={`https://wa.me/916359933777?text=${message}`}
         target="_blank"

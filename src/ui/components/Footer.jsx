@@ -3,12 +3,12 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import {
   FaFacebookF,
-  FaTwitter,
-  FaDribbble,
   FaInstagram,
   FaPhone,
   FaEnvelope,
   FaLocationDot,
+  FaYoutube,
+  FaLinkedinIn
 } from "react-icons/fa6";
 import Whatsapp from "./Whatsapp";
 
@@ -53,25 +53,25 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: FaFacebookF,
-      href: "#",
+      href: "https://www.facebook.com/bhavik.siddhpura.9",
       color: "hover:text-blue-500",
       bg: "hover:bg-blue-500/10",
     },
     {
-      icon: FaTwitter,
-      href: "#",
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/in/bhavik-siddhpura-b0543b66/",
       color: "hover:text-gray-200",
       bg: "hover:bg-gray-200/10",
     },
     {
-      icon: FaDribbble,
-      href: "#",
+      icon: FaInstagram,
+      href: "https://www.instagram.com/bhavik.siddhpura/",
       color: "hover:text-pink-500",
       bg: "hover:bg-pink-500/10",
     },
     {
-      icon: FaInstagram,
-      href: "#",
+      icon: FaYoutube,
+      href: "https://www.youtube.com/@TheVisaMan",
       color: "hover:text-orange-400",
       bg: "hover:bg-orange-400/10",
     },
@@ -341,7 +341,7 @@ const Footer = () => {
               <span className="font-medium text-purple-300">FSO</span> ©{" "}
               {currentYear}. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
+            {/* <div className="flex space-x-6 text-sm text-gray-400">
               <a
                 href="#"
                 className="hover:text-purple-300 transition-colors duration-300"
@@ -360,7 +360,7 @@ const Footer = () => {
               >
                 Cookie Policy
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -368,7 +368,7 @@ const Footer = () => {
       {/* Scroll to top button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed sm:bottom-16 lg:bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-all duration-300 z-20 ${
+        className={`fixed bottom-20 lg:bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-all duration-300 z-20 ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
         style={{ transitionDelay: "1200ms" }}
