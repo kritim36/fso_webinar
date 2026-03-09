@@ -83,8 +83,9 @@ export default function RootLayout({ children }) {
           <Navbar />
             {children}
           <Footer />
+          {/* <Whatsapp /> */}
         </StoreProvider>
-        {/* <Whatsapp /> */}
+        
       </body>
     </html>
   );

@@ -89,7 +89,7 @@ export default function WebinarSection() {
           <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-sm border border-indigo-200/30 rounded-full px-6 py-3 mb-8">
             <Calendar className="w-5 h-5 text-indigo-600" />
             <span className="text-sm font-semibold text-indigo-700 tracking-wide uppercase">
-              South Korea Webinar 2025-26
+              South Korea Webinar 2026-27
             </span>
           </div>
 

@@ -10,6 +10,7 @@ import {
   FaEnvelope,
   FaLocationDot,
 } from "react-icons/fa6";
+import Whatsapp from "./Whatsapp";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -367,7 +368,7 @@ const Footer = () => {
       {/* Scroll to top button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-all duration-300 z-20 ${
+        className={`fixed sm:bottom-16 lg:bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-all duration-300 z-20 ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
         style={{ transitionDelay: "1200ms" }}
@@ -386,6 +387,8 @@ const Footer = () => {
           />
         </svg>
       </button>
+
+      <Whatsapp />
     </footer>
   );
 };
