@@ -162,10 +162,14 @@ export default function Navbar() {
           {webinars && (
           <div className="flex items-center justify-center gap-2">
             <div className="w-4 h-4 lg:w-2 lg:h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>
+            {/* <span>
               🚀 Join our South Korea Workshop on {new Date(webinars.start_time).toLocaleDateString()} at {new Date(webinars.start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}— for only INR 199
-              {/* 🎯 Join our exclusive South Korea workshop @ INR 199 - Limited seats
-              available! */}
+            </span> */}
+            <span>
+              🚀 Join our South Korea Workshop on {new Date(webinars.start_time).toLocaleDateString()} at {new Date(webinars.start_time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}— for only{" "}
+              <span className="inline-flex items-center bg-yellow-400 text-yellow-900 font-extrabold px-2 py-0.5 rounded-md text-sm shadow-sm animate-pulse">
+                INR 199
+              </span>
             </span>
             <button
               onClick={() => setShowForm(true)}

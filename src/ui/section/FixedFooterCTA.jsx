@@ -127,9 +127,19 @@ export default function FixedFooterCTA() {
     <div className="flex items-center justify-between gap-3">
 
       {/* Price Section */}
-      <div className="text-left">
+      {/* <div className="text-left">
         <p className="text-xl font-extrabold text-blue-600 bg-blue-100 px-2 py-0.5 rounded">
           ₹199
+        </p>
+        <p className="text-xs text-gray-400 line-through">₹299</p>
+      </div> */}
+
+      {/* Price Section */}
+      <div className="text-left">
+        <p className="text-xl font-extrabold text-gray-700">
+          ₹<span className="inline-flex items-center bg-yellow-400 text-yellow-900 font-extrabold px-2 py-0.5 rounded-md shadow-sm animate-pulse">
+            199
+          </span>
         </p>
         <p className="text-xs text-gray-400 line-through">₹299</p>
       </div>

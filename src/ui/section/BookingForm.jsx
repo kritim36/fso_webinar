@@ -1,17 +1,39 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerWebinar, resetRegistration } from "@/store/webinarSlice";
 
 export default function BookingForm({ formData, setFormData, onClose }) {
   const dispatch = useDispatch();
 
-  const handleChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [localForm, setLocalForm] = useState({
+    name: formData.name || "",
+    email: formData.email || "",
+    phone: formData.phone || "",
+  });
+
+  // const handleChange = (e) =>
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // For phone: only allow digits, +, -, spaces, ( )
+    if (name === "phone") {
+      const sanitized = value.replace(/[^\d+\-\s()]/g, "");
+      setLocalForm((prev) => ({ ...prev, phone: sanitized }));
+      return;
+    }
+
+    setLocalForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registerWebinar(formData));
+    const updated = { ...formData, ...localForm };
+    setFormData(updated);
+    dispatch(registerWebinar(updated));
+    // dispatch(registerWebinar(formData));
   };
 
   return (
@@ -23,7 +45,7 @@ export default function BookingForm({ formData, setFormData, onClose }) {
           <input
             type="text"
             name="name"
-            value={formData.name}
+            value={localForm.name}
             onChange={handleChange}
             placeholder="Name"
             className="w-full p-3 rounded-md bg-[#1a1a2e] text-white focus:outline-none"
@@ -32,7 +54,7 @@ export default function BookingForm({ formData, setFormData, onClose }) {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={localForm.email}
             onChange={handleChange}
             placeholder="Email"
             className="w-full p-3 rounded-md bg-[#1a1a2e] text-white focus:outline-none"
@@ -41,9 +63,11 @@ export default function BookingForm({ formData, setFormData, onClose }) {
           <input
             type="tel"
             name="phone"
-            value={formData.phone}
+            value={localForm.phone}
             onChange={handleChange}
-            placeholder="Phone"
+            placeholder="Phone (e.g. +91 98765 43210)"
+            inputMode="tel"         // opens numeric keyboard on mobile
+            autoComplete="tel"
             className="w-full p-3 rounded-md bg-[#1a1a2e] text-white focus:outline-none"
             required
           />
