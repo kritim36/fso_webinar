@@ -8,7 +8,7 @@ const getAuthHeaders = () => ({
 
 // Verify Razorpay payment
 export const verifyPayment = createAsyncThunk("payment/verify", async (paymentData) => {
-  const res = await axios.post(`${baseUrl}payments/verify/`, paymentData, {
+  const res = await axios.post(`${baseUrl}verify-payment/`, paymentData, {
     headers: getAuthHeaders(),
   });
   return res.data;

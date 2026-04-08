@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { fetchWebinars, verifyPayment, resetRegistration } from "@/store/webinarSlice";
@@ -7,6 +7,7 @@ import BookingForm from "./BookingForm";
 
 export default function ConferenceHero() {
   const dispatch = useDispatch();
+  const prefillRef = useRef({});
   const { webinars, registration, paymentVerified  } = useSelector((state) => state.webinar);
   const [timeLeft, setTimeLeft] = useState(null);
   const [showForm, setShowForm] = useState(false);
@@ -32,6 +33,7 @@ export default function ConferenceHero() {
   //   }
   // }, [webinars]);
 
+  prefillRef.current = { name: formData.name, email: formData.email, phone: formData.phone };
     useEffect(() => {
       if (registration?.razorpay_order_id) {
         const options = {
@@ -52,16 +54,16 @@ export default function ConferenceHero() {
             );
           },
           prefill: {
-            name: formData.name,
-            email: formData.email,
-            contact: formData.phone,
+            name: prefillRef.current.name,
+      email: prefillRef.current.email,
+      contact: prefillRef.current.phone,
           },
           theme: { color: "#3399cc" },
         };
         const rzp = new window.Razorpay(options);
         rzp.open();
       }
-    }, [registration, dispatch, formData]);
+    }, [registration, dispatch]);
   
     // SweetAlert after successful payment
     useEffect(() => {

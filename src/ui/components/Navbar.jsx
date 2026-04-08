@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,6 +15,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const prefillRef = useRef({});
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -46,6 +47,7 @@ export default function Navbar() {
     // }, [webinars]);
 
       // Launch Razorpay
+      prefillRef.current = { name: formData.name, email: formData.email, phone: formData.phone };
       useEffect(() => {
         if (registration?.razorpay_order_id) {
           const options = {
@@ -66,20 +68,20 @@ export default function Navbar() {
               );
             },
             prefill: {
-              name: formData.name,
-              email: formData.email,
-              contact: formData.phone,
+              name: prefillRef.current.name,
+      email: prefillRef.current.email,
+      contact: prefillRef.current.phone,
             },
             theme: { color: "#3399cc" },
           };
           const rzp = new window.Razorpay(options);
           rzp.open();
         }
-      }, [registration, dispatch, formData]);
+      }, [registration, dispatch]);
     
       // SweetAlert after successful payment
       useEffect(() => {
-        if (paymentVerified) {
+        if (paymentVerified?.success) {
           Swal.fire({
             title: "🎉 Payment Successful!",
             text: "Please check your email for webinar confirmation.",

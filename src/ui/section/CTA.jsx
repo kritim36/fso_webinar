@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import BookingForm from "./BookingForm";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWebinars, verifyPayment, resetRegistration } from "@/store/webinarSlice";
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 const CTA = () => {
   const dispatch = useDispatch();
+  const prefillRef = useRef({});
   const { webinars, registration, paymentVerified } = useSelector(
     (state) => state.webinar
   );
@@ -44,6 +45,7 @@ const CTA = () => {
   // }, [webinars]);
 
   // Razorpay launch
+  prefillRef.current = { name: formData.name, email: formData.email, phone: formData.phone };
   useEffect(() => {
     if (registration?.razorpay_order_id) {
       const options = {
@@ -64,20 +66,20 @@ const CTA = () => {
           );
         },
         prefill: {
-          name: formData.name,
-          email: formData.email,
-          contact: formData.phone,
+          name: prefillRef.current.name,
+      email: prefillRef.current.email,
+      contact: prefillRef.current.phone,
         },
         theme: { color: "#3399cc" },
       };
       const rzp = new window.Razorpay(options);
       rzp.open();
     }
-  }, [registration, dispatch, formData]);
+  }, [registration, dispatch]);
 
   // SweetAlert after successful payment
   useEffect(() => {
-    if (paymentVerified) {
+    if (paymentVerified?.success) {
       Swal.fire({
         title: "🎉 Payment Successful!",
         text: "Please check your email for webinar confirmation.",
